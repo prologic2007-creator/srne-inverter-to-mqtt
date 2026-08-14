@@ -1614,8 +1614,16 @@ code {
     justify-content: center;
   }
 
-  .storm-actions,
   .storm-charge-stats {
+    grid-column: 1 / -1;
+  }
+
+  .storm-actions {
     grid-column: 1;
+  }
+
+  .storm-charge-panel .panel-header .status-pill {
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 }
