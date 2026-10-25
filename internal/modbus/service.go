@@ -367,6 +367,7 @@ func rawFromSnapshot(snapshot state.Snapshot, id string) (uint16, bool) {
 }
 
 func (s *Service) unlockBeforeWriteLocked(client gomodbus.Client) {
+	log.Printf("modbus unlock attempt address=0x%04X", unlockRegisterAddress)
 	if _, err := client.WriteSingleRegister(unlockRegisterAddress, 0); err != nil {
 		if isAcknowledgeException(err) {
 			log.Printf("modbus unlock acknowledged address=0x%04X", unlockRegisterAddress)
